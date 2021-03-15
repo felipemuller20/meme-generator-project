@@ -1,9 +1,25 @@
-function insertText () {
+function insertText() {
   const textBox = document.getElementById('text-input');
-  textBox.addEventListener('input', function (event) {
+  function changeText(event) {
     const newText = document.getElementById('meme-text');
     newText.innerText = event.target.value;
-  });
+  }
+  textBox.addEventListener('input', changeText);
 }
 
 insertText();
+
+function addImage(event) {
+  const uploaded = document.getElementById('meme-insert');
+  uploaded.addEventListener('change', function (event) {
+    console.log(uploaded.files);
+    const reader = new FileReader();
+    reader.onload = function () {
+      const image = document.getElementById('meme-image');
+      image.src = reader.result
+    }
+    reader.readAsDataURL(uploaded.files[0]);
+  })
+}
+
+addImage();
