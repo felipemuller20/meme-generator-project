@@ -1,8 +1,9 @@
 function insertText () {
   const textBox = document.getElementById('text-input');
-  textBox.addEventListener('oninput', function () {
-    console.log(event.input)
-    let memeText = document.getElementById('meme-text');
-    memeText.innerText = document.getElementById('text-input').value;
+  textBox.addEventListener('input', function (event) {
+    const newText = document.getElementById('meme-text');
+    newText.innerText = event.target.value;
   });
 }
+
+insertText();
