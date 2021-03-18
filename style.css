@@ -41,11 +41,11 @@ hr {
 
 #meme-image-container {
   margin: auto;
+  border: solid black 1px;
 }
 section {
   width: 600px;
   height: 400px;
-  border: solid black 1px;
   background-color: white;
 }
 
