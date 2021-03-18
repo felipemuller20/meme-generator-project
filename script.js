@@ -23,3 +23,15 @@ function addImage(event) {
 }
 
 addImage();
+
+function selectMeme() {
+  let memes = document.querySelector('.pre-set-memes');
+  let displayedMeme = document.getElementById('meme-image')
+  memes.addEventListener('click', function () {
+    if (event.target.classList.contains('setted-memes')) {
+      displayedMeme.src = event.target.src
+    }
+  })
+}
+
+selectMeme();
